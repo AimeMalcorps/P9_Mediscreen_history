@@ -50,7 +50,8 @@ public class NotesService {
 	public boolean addNote(NoteDTO noteDTO) {
 		try {
 			List<NoteDTO> listNotes = getAllNotes();
-			Note note = new Note(noteDTO, listNotes.get(listNotes.size() - 1).getId());
+			System.out.println(listNotes.size());
+			Note note = new Note(noteDTO, listNotes.size() > 0 ? listNotes.get(listNotes.size() - 1).getId() : 1);
 			notesRepository.save(note);
 			
 		} catch(Exception e) {
