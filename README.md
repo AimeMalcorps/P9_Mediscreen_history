@@ -28,7 +28,7 @@ cd P9_Mediscreen_demographic
 mvn clean install
 ```
 
-## Utilisation
+## Développement
 
 1. Exécutez l'application en utilisant la commande Maven :
 
@@ -36,9 +36,29 @@ mvn clean install
 mvn spring-boot:run
 ```
 
-2. Accédez à l'application dans votre navigateur Web à l'adresse suivante :
+2. Requêtez à l'application à l'adresse suivante :
 
 ```
+http://localhost:8082
+```
+
+## Dockerisé
+
+1. Build image
+
+```bash
+docker image build -t history_notes .
+```
+
+2. Run container
+
+```bash
+docker container run --name history_notes -p 8082:8082 -d history_notes
+```
+
+3. Requêtez à l'application à l'adresse suivante :
+
+```bash
 http://localhost:8082
 ```
 
