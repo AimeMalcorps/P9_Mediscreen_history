@@ -20,7 +20,7 @@ git clone https://github.com/AimeMalcorps/P9_Mediscreen_history.git
 2. Accédez au répertoire du projet :
 
 ``` bash
-cd P9_Mediscreen_demographic
+cd P9_Mediscreen_history
 ```
 
 3. Exécutez la commande Maven pour construire le projet :
