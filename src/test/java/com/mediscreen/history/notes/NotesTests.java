@@ -93,7 +93,7 @@ public class NotesTests {
 		noteDTO.setNote(newNote);
 		noteDTO.setPatientId(note.getPatientId());
 		
-		notesService.modifyNote(note.getId(), noteDTO);
+		notesService.modifyNote(noteDTO);
 			
 		assertEquals(newNote, notesRepository.findById(1).get().getNote());	
 	}

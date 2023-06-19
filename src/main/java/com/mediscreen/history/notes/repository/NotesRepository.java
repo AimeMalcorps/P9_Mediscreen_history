@@ -8,5 +8,7 @@ import com.mediscreen.history.notes.models.Note;
 
 public interface NotesRepository extends MongoRepository<Note, Integer> {
 
-	List<Note> findByPatientId(int patientId);
+	List<Note> findByPatientId(Integer patientId);
+
+	void deleteByPatientId(Integer patientId);
 }
