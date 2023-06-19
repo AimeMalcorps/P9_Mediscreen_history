@@ -61,9 +61,9 @@ public class NotesService {
 		return true;
 	}
 	
-	public boolean modifyNote(Integer id, NoteDTO noteDTO) {
+	public boolean modifyNote(NoteDTO noteDTO) {
 		try {
-			Note note = notesRepository.findById(id).get();
+			Note note = notesRepository.findById(noteDTO.getId()).get();
 			if (note != null) {
 				note.setNote(noteDTO.getNote());
 				notesRepository.save(note);
@@ -79,6 +79,16 @@ public class NotesService {
 	public boolean deleteNote(Integer id) {
 		try {
 			notesRepository.deleteById(id);
+		} catch(Exception e) {
+			logger.error("Error deleteNote : " + e);
+			return false;
+		}
+		return true;
+	}
+	
+	public boolean deleteAllPatientNotes(Integer patientId) {
+		try {
+			notesRepository.deleteByPatientId(patientId);
 		} catch(Exception e) {
 			logger.error("Error deleteNote : " + e);
 			return false;
